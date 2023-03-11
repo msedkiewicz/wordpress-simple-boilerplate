@@ -1,21 +1,12 @@
 <?php
 
-$myName = "Lena";
+    $names = array('Jane', 'John', 'Tom', 'Jerry');
 
-?>
+    $count = 0;
 
-<p>Hi, my name is <?php echo $myName; ?>.</p>
-
-<?php
-
-$names = array('Jane', 'John', 'Tom', 'Jerry');
-
-$count = 1;
-
-while($count < 100){
-    echo "<li>$count</li>";
+    while($count < 4){
+    echo "<p>Hi, my name is $names[$count]</p>";
     $count++;
-}
+    }
 ?>
 
-<p>Hi, my name is <?php echo $names[3]?>.</p>
