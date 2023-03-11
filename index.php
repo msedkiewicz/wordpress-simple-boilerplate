@@ -1,12 +1,21 @@
 <?php
 
-function greet($name, $color){
-    echo "<p>Hi. My $name is My favourite color is $color.</p>";
-}
+$myName = "Lena";
 
-greet('John', 'red');
-greet('Jane', 'blue');
 ?>
 
-<h1><?php bloginfo('name'); ?></h1>
-<h2><?php bloginfo('description'); ?></h2>
+<p>Hi, my name is <?php echo $myName; ?>.</p>
+
+<?php
+
+$names = array('Jane', 'John', 'Tom', 'Jerry');
+
+$count = 1;
+
+while($count < 100){
+    echo "<li>$count</li>";
+    $count++;
+}
+?>
+
+<p>Hi, my name is <?php echo $names[3]?>.</p>
