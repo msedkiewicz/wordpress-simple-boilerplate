@@ -15,13 +15,9 @@
         <i class="site-header__menu-trigger fa fa-bars" aria-hidden="true"></i>
         <div class="site-header__menu group">
             <nav class="main-navigation">
-                <ul>
-                    <li><a href="<?php echo site_url('/about-us') ?>">O mnie</a></li>
-                    <li><a href="#">Narzędzia</a></li>
-                    <li><a href="#">Wydarzenia</a></li>
-                    <li><a href="#">Mroczne Krainy</a></li>
-                    <li><a href="#">Blog</a></li>
-                </ul>
+            <?php wp_nav_menu(array(
+                'theme_location' => 'headerMenu',
+            )); ?>
             </nav>
             <div class="site-header__util">
                 <a href="#" class="btn btn--small btn--orange float-left push-right">Logowanie</a>
