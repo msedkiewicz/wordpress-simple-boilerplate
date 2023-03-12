@@ -3,7 +3,7 @@
         <div class="group">
             <div class="site-footer__col-one">
                 <h1 class="school-logo-text school-logo-text--alt-color">
-                    <a href="#"><strong>Jeden</strong> krok</a>
+                    <a href="<?php echo site_url() ?>"><strong>Jeden</strong> krok</a>
                 </h1>
                 <p>Stworzone przez:<a class="site-footer__link" href="https://lenasedkiewicz.com/"> &copy; Lena Sędkiewicz</a></p>
             </div>
