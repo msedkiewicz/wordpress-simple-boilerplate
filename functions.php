@@ -8,3 +8,10 @@ function jk_files() {
     wp_enqueue_style('jk_additional_styles', get_theme_file_uri('/build/index.css'));
 }
 add_action('wp_enqueue_scripts', 'jk_files');
+
+/* add features */
+
+function jk_features() {
+    add_theme_support('title-tag');
+}
+add_action('after_setup_theme', 'jk_features');
