@@ -14,7 +14,7 @@
         <div class="site-header__menu group">
             <nav class="main-navigation">
                 <ul>
-                    <li><a href="#">O mnie</a></li>
+                    <li><a href="<?php echo site_url('/about-us') ?>">O mnie</a></li>
                     <li><a href="#">Narzędzia</a></li>
                     <li><a href="#">Wydarzenia</a></li>
                     <li><a href="#">Mroczne Krainy</a></li>
