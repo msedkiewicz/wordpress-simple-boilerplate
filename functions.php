@@ -13,6 +13,8 @@ add_action('wp_enqueue_scripts', 'jk_files');
 
 function jk_features() {
     register_nav_menu('headerMenu', 'Header Menu');
+    register_nav_menu('footerMenuOne', 'Footer Menu 1');
+    register_nav_menu('footerMenuTwo', 'Footer Menu 2');
     add_theme_support('title-tag'); // add description in browser tab
 }
 add_action('after_setup_theme', 'jk_features');

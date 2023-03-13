@@ -12,22 +12,18 @@
                 <div class="site-footer__col-two">
                     <h3 class="headline headline--small">Dowiedz się więcej</h3>
                     <nav class="nav-list">
-                        <ul>
-                            <li><a href="#">O mnie</a></li>
-                            <li><a href="#">Narzędzia</a></li>
-                            <li><a href="#">Wydarzenia</a></li>
-                            <li><a href="#">Mroczne Krainy</a></li>
-                        </ul>
+                        <?php wp_nav_menu(array(
+                            'theme_location' => 'footerMenuOne',
+                        )); ?>
                     </nav>
                 </div>
 
                 <div class="site-footer__col-three">
                     <h3 class="headline headline--small">O mnie</h3>
                     <nav class="nav-list">
-                        <ul>
-                            <li><a href="https://lenasedkiewicz.com/">Strona Lena Sędkiewicz</a></li>
-                            <li><a href="#">Blog</a></li>
-                        </ul>
+                        <?php wp_nav_menu(array(
+                            'theme_location' => 'footerMenuTwo',
+                        )); ?>
                     </nav>
                 </div>
             </div>
