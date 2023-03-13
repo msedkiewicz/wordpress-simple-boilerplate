@@ -20,6 +20,7 @@ get_header();
                 <div class="metabox">
                     <p>Autor: <?php the_author_posts_link(); ?>, opublikowane: <?php the_time('l, j F Y'); ?>, kategoria: <?php echo get_the_category_list(', '); ?></p>
                 </div>
+                <div><?php the_post_thumbnail( 'medium' );  ?></div>
                 <div class="generic-content">
                     <?php the_excerpt(); ?>
                     <p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Więcej &raquo</a></p>
