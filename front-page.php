@@ -36,7 +36,7 @@
                             } ?> <a href="<?php the_permalink(); ?>" class="nu gray">Więcej</a></p>
                     </div>
                 </div>
-            <?php }
+            <?php } wp_reset_postdata();
             ?>
 
 
