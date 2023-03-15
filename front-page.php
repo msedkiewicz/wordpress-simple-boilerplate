@@ -40,7 +40,7 @@
             ?>
 
 
-            <p class="t-center no-margin"><a href="#" class="btn btn--blue">View All Events</a></p>
+            <p class="t-center no-margin"><a href="<?php echo get_post_type_archive_link('event'); ?>" class="btn btn--blue">Zobacz więcej wydarzeń</a></p>
         </div>
     </div>
     <div class="full-width-split__two">
@@ -69,7 +69,7 @@
 
             <?php } wp_reset_postdata(); /* cleaning after custom query */
             ?>
-            <p class="t-center no-margin"><a href="<?php echo site_url('/blog/'); ?>" class="btn btn--yellow">View All Blog Posts</a></p>
+            <p class="t-center no-margin"><a href="<?php echo site_url('/blog/'); ?>" class="btn btn--yellow">Przejdź do bloga</a></p>
         </div>
     </div>
 </div>
