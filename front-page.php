@@ -23,7 +23,7 @@
             while ($homeEvents->have_posts()) {
                 $homeEvents->the_post(); ?>
                 <div class="event-summary">
-                    <a class="event-summary__date t-center" href="#">
+                    <a class="event-summary__date t-center" href="<?php the_permalink(); ?>">
                         <span class="event-summary__month">Mar</span>
                         <span class="event-summary__day">25</span>
                     </a>
