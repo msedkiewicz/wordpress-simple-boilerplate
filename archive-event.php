@@ -35,6 +35,7 @@ get_header();
         }
         echo paginate_links();
         ?>
+        <p>Chcesz zobaczyć minione wydarzenia? Zajrzyj do <a href="<?php echo site_url('/archiwum-wydarzen/') ?>">archiwum wydarzeń</a>!</p>
 
     </div>
 <?php
