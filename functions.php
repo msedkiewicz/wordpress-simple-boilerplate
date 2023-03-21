@@ -24,6 +24,8 @@ add_action('after_setup_theme', 'jk_features');
 
 /* function for events ordering in archive */
 function jk_adjust_queries($query) {
+
+    /* function for events ordering in archive */
     if (!is_admin() AND is_post_type_archive('event') AND $query->is_main_query()) {
         $today = date('Ymd');
         $query->set('meta_key','event_date');
@@ -37,6 +39,13 @@ function jk_adjust_queries($query) {
                 'type' => 'numeric'
             ))
         );
+    }
+
+    /* function for workshop ordering in archive */
+    if (!is_admin() AND is_post_type_archive('workshop') AND $query->is_main_query()) {
+        $query->set('orderby','title');
+        $query->set('order', 'ASC');
+        $query->set('posts_per_page', -1);
     }
 };
 add_action('pre_get_posts', 'jk_adjust_queries');
