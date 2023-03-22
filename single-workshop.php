@@ -38,11 +38,18 @@ while(have_posts()) {
             echo '<h2 class="headline headline--medium">Autorzy warsztatu ' . get_the_title() . '</h2>';
 
             while ($relatedAuthors->have_posts()) {
-                $relatedAuthors->the_post(); ?>
+                $relatedAuthors->the_post();
 
-                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+            echo '<ul class="professor-cards">' ?>
+                <li class="professor-card__list-item">
+                    <a class="professor-card" href="<?php the_permalink(); ?>">
+                        <img class="professor-card__image" src="<?php the_post_thumbnail_url(); ?>">
+                        <span class="professor-card__name"><?php the_title(); ?></span>
+                    </a>
+                </li>
 
             <?php } wp_reset_postdata();
+            echo '</ul>';
         }
 
         $today = date('Ymd');
