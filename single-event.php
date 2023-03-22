@@ -20,7 +20,20 @@ while(have_posts()) {
             <?php the_post_thumbnail(); ?>
         </div>
         <div class="generic-content"><?php the_content(); ?></div>
+        <?php
+        $relatedWorkshops = get_field('related_workshops');
 
+            if($relatedWorkshops) {
+                echo '<hr class="section-break">';
+                echo '<h2 class="headline headline--medium">Powiązane warsztaty:</h2>';
+                echo '<ul class="link-list min-list">';
+                foreach($relatedWorkshops as $workshop){
+                    ?>
+                    <li><a href="<?php echo get_the_permalink($workshop) ?>"><?php echo get_the_title($workshop); ?></a></li>
+                <?php }
+                echo "</ul>";
+            }
+        ?>
     </div>
     <?php
 }
