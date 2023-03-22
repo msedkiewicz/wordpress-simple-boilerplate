@@ -1,5 +1,5 @@
 <?php
-get_header();
+    get_header();
 
 while(have_posts()) {
     the_post(); ?>
@@ -20,7 +20,31 @@ while(have_posts()) {
             <?php the_post_thumbnail(); ?>
         </div>
         <div class="generic-content"><?php the_content(); ?></div>
+
         <?php
+        $relatedAuthors = new WP_Query(array(
+            'posts_per_page' => -1,
+            'post_type' => 'blogauthor',
+            'orderby' => 'title',
+            'order' => 'ASC',
+            array(
+                'key' => 'related_workshops',
+                'compare' => 'LIKE',
+                'value' => '"' . get_the_ID() . '"'
+            )
+        ));
+        if($relatedAuthors->have_posts()) {
+            echo '<hr class="section-break">';
+            echo '<h2 class="headline headline--medium">Autorzy warsztatu ' . get_the_title() . '</h2>';
+
+            while ($relatedAuthors->have_posts()) {
+                $relatedAuthors->the_post(); ?>
+
+                <li><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></li>
+
+            <?php } wp_reset_postdata();
+        }
+
         $today = date('Ymd');
         $homeEvents = new WP_Query(array(
             'posts_per_page' => 2,
