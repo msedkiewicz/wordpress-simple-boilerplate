@@ -13,10 +13,12 @@ while(have_posts()) {
         </div>
     </div>
     <div class="container container--narrow page-section">
-        <div>
-            <?php the_post_thumbnail(); ?>
+        <div class="generic-content">
+            <div class="row group">
+                <div class="one-third"><?php the_post_thumbnail(); ?></div>
+                <div class="two-thirds"><?php the_content(); ?></div>
+            </div>
         </div>
-        <div class="generic-content"><?php the_content(); ?></div>
 
         <?php
         $relatedWorkshops = get_field('related_workshops');
