@@ -18,9 +18,5 @@
     "@wordpress/scripts": "*",
     "axios": "^0.21.1",
     "normalize.css": "^8.0.1"
-  },
-  "devDependencies": {
-    "postcss": "^8.4.21",
-    "postcss-cli": "^10.1.0"
   }
 }
