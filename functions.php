@@ -54,7 +54,7 @@ function jk_adjust_queries($query) {
 add_action('pre_get_posts', 'jk_adjust_queries');
 
 /* Reusable function for page banner */
-function pageBanner($args) {
+function pageBanner($args = NULL) {
     if (!$args['title']) {
         $args['title'] = get_the_title();
     }
