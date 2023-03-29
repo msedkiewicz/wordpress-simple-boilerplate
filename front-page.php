@@ -34,7 +34,7 @@
 
             while ($homeEvents->have_posts()) {
                 $homeEvents->the_post();
-                get_template_part('template-parts/event');
+                get_template_part('template-parts/content-event');
             } wp_reset_postdata();
             ?>
 
