@@ -1,15 +1,11 @@
 <?php
 get_header();
+
+pageBanner(array(
+    'title' => 'Warsztaty',
+    'subtitle' => 'Ćwiczenia dla Twojej głowy'
+));
 ?>
-    <div class="page-banner">
-        <div class="page-banner__bg-image" style="background-image: url(<?php echo get_theme_file_uri('/images/ocean.jpg') ?>);"></div>
-        <div class="page-banner__content container container--narrow">
-            <h1 class="page-banner__title">Warsztaty</h1>
-            <div class="page-banner__intro">
-                <p>Ćwiczenia dla Twojej głowy</p>
-            </div>
-        </div>
-    </div>
 
     <div class="container container--narrow page-section">
         <?php
