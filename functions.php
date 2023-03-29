@@ -55,13 +55,13 @@ add_action('pre_get_posts', 'jk_adjust_queries');
 
 /* Reusable function for page banner */
 function pageBanner($args = NULL) {
-    if (!$args['title']) {
+    if (!isset($args['title'])) {
         $args['title'] = get_the_title();
     }
-    if (!$args['subtitle']) {
+    if (!isset($args['subtitle'])) {
         $args['subtitle'] = get_field('page_banner');
     }
-    if (!$args['photo']) {
+    if (!isset($args['photo'])) {
         if (get_field('page_background_img')) {
             $args['photo'] = get_field('page_background_img')['sizes']['pageBanner'];
         } else {
