@@ -21,6 +21,7 @@ function jk_features() {
     add_theme_support('title-tag'); // add description in browser tab
     add_image_size('authorLandscape', 400, 260, true);
     add_image_size('authorPortrait', 480, 650, true);
+    add_image_size('pageBanner', 1500, 350, true);
 }
 add_action('after_setup_theme', 'jk_features');
 
