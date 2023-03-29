@@ -36,11 +36,11 @@ while(have_posts()) {
         if($relatedAuthors->have_posts()) {
             echo '<hr class="section-break">';
             echo '<h2 class="headline headline--medium">Autorzy warsztatu ' . get_the_title() . '</h2>';
+            echo '<ul class="professor-cards">';
 
             while ($relatedAuthors->have_posts()) {
                 $relatedAuthors->the_post();
-
-            echo '<ul class="professor-cards">' ?>
+                ?>
                 <li class="professor-card__list-item">
                     <a class="professor-card" href="<?php the_permalink(); ?>">
                         <img class="professor-card__image" src="<?php the_post_thumbnail_url(); ?>">
@@ -48,8 +48,9 @@ while(have_posts()) {
                     </a>
                 </li>
 
-            <?php } wp_reset_postdata();
+            <?php }
             echo '</ul>';
+            wp_reset_postdata();
         }
 
         $today = date('Ymd');
