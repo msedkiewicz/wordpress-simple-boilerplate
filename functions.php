@@ -19,6 +19,8 @@ function jk_features() {
     /* add support for blog posts images */
     add_theme_support( 'post-thumbnails' );
     add_theme_support('title-tag'); // add description in browser tab
+    add_image_size('authorLandscape', 400, 260, true);
+    add_image_size('authorPortrait', 480, 650, true);
 }
 add_action('after_setup_theme', 'jk_features');
 
