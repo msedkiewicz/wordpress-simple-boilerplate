@@ -6,27 +6,27 @@ pageBanner(array(
 ));
 ?>
 
-    <div class="container container--narrow page-section">
+<div class="">
+    <div class="">
     <?php
     while(have_posts()) {
-        the_post(); ?>
-            <div class="post-item">
-                <h2 class="headline headline--medium headline--post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                <div class="metabox">
-                    <p>Autor: <?php the_author_posts_link(); ?>, opublikowane: <?php the_time('l, j F Y'); ?>, kategoria: <?php echo get_the_category_list(', '); ?></p>
-                </div>
-                <div><?php the_post_thumbnail( 'medium' );  ?></div>
-                <div class="generic-content">
-                    <?php the_excerpt(); ?>
-                    <p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Więcej &raquo</a></p>
-                </div>
+    the_post(); ?>
+        <div class="">
+            <h2 class=""><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+            <div class="">
+                <?php the_post_thumbnail( 'medium' );  ?>
             </div>
-    <?php
-    }
-    echo paginate_links();
-    ?>
-
+            <div>
+                <?php the_excerpt(); ?>
+                <p><a class="button" href="<?php the_permalink(); ?>">Więcej &raquo</a></p>
+            </div>
+        </div>
+    <?php } ?>
     </div>
+</div>
+<div class="">
+    <?php  echo paginate_links(); ?>
+</div>
 <?php
     get_footer();
 ?>
