@@ -3,7 +3,7 @@
         <div class="">
             <div class="">
                 <h1 class="">
-                    <a href="<?php echo site_url() ?>"><strong>Jeden</strong> krok</a>
+                    <a href="<?php echo site_url() ?>"><strong>URL strony</a>
                 </h1>
                 <p>Stworzone przez:<a class="" href=""> &copy; </a></p>
             </div>
