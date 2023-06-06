@@ -19,63 +19,18 @@ function jk_features() {
     /* add support for blog posts images */
     add_theme_support( 'post-thumbnails' );
     add_theme_support('title-tag'); // add description in browser tab
-    add_image_size('authorLandscape', 400, 260, true);
-    add_image_size('authorPortrait', 480, 650, true);
-    add_image_size('pageBanner', 1500, 350, true);
 }
 add_action('after_setup_theme', 'jk_features');
-
-/* function for events ordering in archive */
-function jk_adjust_queries($query) {
-
-    /* function for events ordering in archive */
-    if (!is_admin() AND is_post_type_archive('event') AND $query->is_main_query()) {
-        $today = date('Ymd');
-        $query->set('meta_key','event_date');
-        $query->set('orderby','meta_value_num');
-        $query->set('order', 'ASC');
-        $query->set('meta_query', array(
-            array(
-                'key' => 'event_date',
-                'compare' => '>=',
-                'value' => $today,
-                'type' => 'numeric'
-            ))
-        );
-    }
-
-    /* function for workshop ordering in archive */
-    if (!is_admin() AND is_post_type_archive('workshop') AND $query->is_main_query()) {
-        $query->set('orderby','title');
-        $query->set('order', 'ASC');
-        $query->set('posts_per_page', -1);
-    }
-};
-add_action('pre_get_posts', 'jk_adjust_queries');
 
 /* Reusable function for page banner */
 function pageBanner($args = NULL) {
     if (!isset($args['title'])) {
         $args['title'] = get_the_title();
     }
-    if (!isset($args['subtitle'])) {
-        $args['subtitle'] = get_field('page_banner');
-    }
-    if (!isset($args['photo'])) {
-        if (get_field('page_background_img') AND !is_archive() AND !is_home()) {
-            $args['photo'] = get_field('page_background_img')['sizes']['pageBanner'];
-        } else {
-            $args['photo'] = get_theme_file_uri('/images/ocean.jpg');
-        }
-    }
     ?>
-    <div class="page-banner">
-        <div class="page-banner__bg-image" style="background-image: url(<?php echo $args['photo']; ?>);"></div>
-        <div class="page-banner__content container container--narrow">
-            <h1 class="page-banner__title"><?php echo $args['title'] ?></h1>
-            <div class="page-banner__intro">
-                <p><?php echo $args['subtitle'] ?></p>
-            </div>
+    <div class="">
+        <div class="">
+            <h1 class=""><?php echo $args['title'] ?></h1>
         </div>
     </div>
 <?php
