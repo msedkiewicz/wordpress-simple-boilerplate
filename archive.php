@@ -7,18 +7,18 @@ pageBanner(array(
 ));
 ?>
 
-    <div class="container container--narrow page-section">
+    <div class="">
         <?php
         while(have_posts()) {
             the_post(); ?>
-            <div class="post-item">
-                <h2 class="headline headline--medium headline--post-title"><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
-                <div class="metabox">
+            <div class="">
+                <h2 class=""><a href="<?php the_permalink(); ?>"><?php the_title(); ?></a></h2>
+                <div class="">
                     <p>Autor: <?php the_author_posts_link(); ?>, opublikowane: <?php the_time('l, j F Y'); ?>, kategoria: <?php echo get_the_category_list(', '); ?></p>
                 </div>
-                <div class="generic-content">
+                <div class="">
                     <?php the_excerpt(); ?>
-                    <p><a class="btn btn--blue" href="<?php the_permalink(); ?>">Więcej &raquo</a></p>
+                    <p><a class="" href="<?php the_permalink(); ?>">Więcej &raquo</a></p>
                 </div>
             </div>
             <?php
