@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php
+
+/* Template name: Front Page Template */
+
+get_header(); ?>
 
 <div class="">
     <div class=""></div>
