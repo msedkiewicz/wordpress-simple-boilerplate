@@ -1,4 +1,7 @@
 <?php
+
+/* Template name: Blog page Template */
+
 get_header();
 pageBanner(array(
     'title' => 'Blog',
