@@ -35,3 +35,62 @@ function pageBanner($args = NULL) {
     </div>
 <?php
 }
+
+// Add options checkbox to Settings / General 
+function mythemename_settings_general_maintenance()
+{
+    add_settings_section(
+        'my_settings_section', // Section ID 
+        'ADDITIONAL SETTINGS', // Section Title
+        'my_section_options_callback', // Content Callback
+        'general' // Show under "General" settings page
+    );
+    add_settings_field(
+        'maintenance_mode', // Option ID
+        'Maintenance mode', // Option Label
+        'maintenance_mode_callback', // Callback for Arguments 
+        'general', // Show under "General" settings page
+        'my_settings_section', // Name of the section
+        array( // The $args to pass to the callback
+            'maintenance_mode' // Should match Option ID
+        )
+    );
+    register_setting('general', 'maintenance_mode', 'esc_attr');
+}
+function my_section_options_callback()
+{
+    // Custom Section Callback content
+    echo "Custom theme options";
+}
+function maintenance_mode_callback($args)
+{
+    // Checkbox Callback
+    $value = get_option($args[0]);
+    $checked = ($value == "on") ? "checked" : "";
+    echo "<label>
+      <input type=\"checkbox\" id=\"$args[0]\" name=\"$args[0]\" $checked />
+      <span>Check to activate Maintenance Mode page</span>
+    </label><p>A general <i>Under Maintenance</i> page will be shown to non-admin users.</p>";
+}
+add_action('admin_init', 'mythemename_settings_general_maintenance');
+
+// Handle Maintenance page
+if (!function_exists('wp_under_maintenance')) :
+    function wp_under_maintenance()
+    {
+        $isLoginPage = basename($_SERVER['PHP_SELF']) == 'wp-login.php';
+        $isMaintenanceModeOn = get_option('maintenance_mode') == "on";
+
+        if (
+            $isMaintenanceModeOn &&
+            !$isLoginPage &&
+            !is_user_logged_in() &&
+            !is_admin() &&
+            !current_user_can("update_plugins")
+        ) {
+            get_template_part('maintenance');
+            exit();
+        }
+    }
+endif;
+add_action('init', 'wp_under_maintenance', 30);
